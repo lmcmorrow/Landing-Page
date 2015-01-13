@@ -1,0 +1,255 @@
+#img1{
+    width:25%;
+    float: left;
+    padding-left: 25px;
+}
+
+#img1:hover{
+    width:75%;
+}
+
+.featurette-heading {
+    font-size: 28px !important;
+}
+
+.featurette-heading {
+    margin-top: 10px !important;
+}
+
+.bs-docs-masthead, .bs-docs-header {
+    background-color: #22465E !important;
+    background-image: linear-gradient(to top, #175399 0px, #15448C 100%) !important;
+    background-repeat: repeat-x;
+    color: #53bbd4;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.featurette-heading {
+    margin-left: 25px !important;
+}
+
+@media (min-width: 992px) {
+    .bs-docs-header h1, .bs-docs-header p {
+        margin-right: 20px !important;
+    }
+}
+
+.status, .switch {
+    display: block;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-top: 15px;
+    position: relative;
+}
+
+
+.docandvideo h2 {
+    color: #000000;
+    margin-top: 0;
+    font-size: 24px !important;
+}
+
+.docandvideo a {
+    font-size: 17px;
+    color: #53bbd4;
+}
+
+.docandvideo .well {
+    margin-bottom: 0;
+    margin-top: 25px;
+}
+
+.docandvideo .a.span {
+    font-size: 50%;
+}
+
+.docandvideo .label, a {
+    font-size: 100%;
+}
+
+.docandvideo .label, p75 {
+    font-size: 75%;
+}
+
+.navbar-default {
+    background-color: #53bbd4;
+    border-color: #000;
+}
+
+.navbar-default .navbar-text {
+    color: #FFF;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #FFF;
+    font-size: 20px;
+}
+
+.navbar-default .navbar-brand {
+    color: #FFF;
+    font-size: 24px;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    background-color: transparent;
+    color: #000;
+}
+
+.vote {
+    font-size: 14px;
+}
+
+.bs-docs-header h1 {
+    margin-top: 20px !important;
+}
+
+.switch {
+    position: relative;
+}
+
+#pagedemo {
+    background-color: #FFF;
+}
+
+#lnkbtn {
+    padding: 0;
+}
+
+/* http://callmenick.com/2014/05/13/css-toggle-switch-examples/ */
+
+
+.cmn-toggle {
+    position: absolute;
+    margin-left: -9999px;
+    visibility: hidden;
+}
+.cmn-toggle + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+input.cmn-toggle-yes-no + label {
+    padding: 2px;
+    width: 180px;
+    height: 60px;
+}
+input.cmn-toggle-yes-no + label:before,
+input.cmn-toggle-yes-no + label:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+}
+input.cmn-toggle-yes-no + label:before {
+    background-color: #bdbddD;
+    content: attr(data-off);
+    transition: transform 0.5s;
+    backface-visibility: hidden;
+}
+input.cmn-toggle-yes-no + label:after {
+    background-color: #57c1b4;
+    content: attr(data-on);
+    transition: transform 0.5s;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+input.cmn-toggle-yes-no:checked + label:before {
+    transform: rotateY(180deg);
+}
+input.cmn-toggle-yes-no:checked + label:after {
+    transform: rotateY(0);
+}
+
+
+
+
+input.cmn-toggle-round + label {
+    padding: 2px;
+    width: 57px;
+    height: 25px;
+    background-color: #bdbddD;
+    border-radius: 60px;
+}
+input.cmn-toggle-round + label:before,
+input.cmn-toggle-round + label:after {
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    bottom: 1px;
+    content: "";
+}
+input.cmn-toggle-round + label:before {
+    right: 1px;
+    background-color: #D8D8D8;
+    border-radius: 60px;
+    transition: background 0.4s;
+}
+input.cmn-toggle-round + label:after {
+    width: 25px;
+    background-color: #fff;
+    border-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: margin 0.4s;
+}
+input.cmn-toggle-round:checked + label:before {
+    background-color: #57c1b4;
+}
+input.cmn-toggle-round:checked + label:after {
+    margin-left: 30px;
+}
+
+
+
+
+input[type="text email"] {
+    display: block;
+    margin: 0;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 18px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+}
+input[type="text"]:focus {
+    outline: none;
+}
+
+.style-2 input[type="text"] {
+    padding: 3px;
+    border: solid 5px #c9c9c9;
+    transition: border 0.3s;
+}
+.style-2 input[type="text"]:focus,
+.style-2 input[type="text"].focus {
+    border: solid 5px #969696;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 50px;
+    background-color: #f5f5f5;
+    margin-top: 10px;
+}
+
+.label {
+    font-size: 100%;;
+}

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html ng-app="usecaseApp">
+<head lang="en">
+  <meta charset="utf-8">
+  <title>SE Demo App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/docs.css">
+  <link rel="stylesheet" href="styles/usecase.css">
+
+  <link href="video-js/video-js.css" rel="stylesheet">
+  <script src="video-js/video.js"></script>
+  <script>
+    videojs.options.flash.swf = "video-js/video-js.swf"
+  </script>
+
+  <script src="scripts/controllers/main.js"></script>
+
+
+</head>
+
+<body ng-controller="UsecaseCtrl">
+
+<!-- Fixed navbar -->
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://solutionsenablement.ca.com">Solutions Enablement</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul  ng-show="demomode" class="nav navbar-nav">
+        <li><a href="http://demosondemand.ca.com/" target="_blank">Schedule a Demo</a></li>
+        <li><a title="DoD" href="https://km.ca.com/sales/presales/solutions/Lists/Issues%20%20Requests/NewForm.aspx?RootFolder=/sales/presales/solutions/Lists/Issues  Requests&ContentTypeId=0x010300073C8CCEACA033498DFFD6BF964C11BC&Source=https://km.ca.com/sales/presales/solutions/Lists/Issues%2520%2520Requests/active.aspx" target="_blank">Support</a></li>
+      </ul>
+
+      <!-- Toggle start -->
+      <!--
+              <div class="switch">
+                <input  ng-init="demomode=false" ng-model="demomode" id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox">
+                <label for="cmn-toggle-1"></label>
+                <label ng-click="demomode" for="cmn-toggle-1" data-on="ON" data-off="OFF"></label>
+              </div>
+      -->
+      <div class="switch pull-right">
+        <input ng-init="demomode=false" ng-model="demomode" id="cmn-toggle-7" class="cmn-toggle cmn-toggle-round active" type="checkbox">
+        <label ng-click="demomode" for="cmn-toggle-7" data-on="Collaborate ON" data-off="Collaborate OFF"></label>
+      </div>
+
+      <!-- How to use this page Modal button -->
+      <button id="pilotpage" class="pull-right btn btn-primary" data-toggle="modal" data-target=".howtouse">
+        How to use this page
+      </button>
+
+      <!-- Toggle end -->
+
+<!--
+      <div class = "status pull-right">
+        <span  class="label" id="status">checking...</span>
+      </div>
+-->
+
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</div>
+
+<div id="content" class="bs-docs-header">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-8 bs-docs-">
+        <h1>CA Application Test demo</h1>
+        <h3>
+
+          <section id="max-time-unit-countdown-timer">
+
+            <div class="bs-docs-example">
+
+              <h3 class="WithoutMaxTimeUnit">
+                Countup
+                <br/>
+                <timer start-time="1357020000000">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
+                <br/>
+                Countdown
+                <br/>
+                <timer end-time="future">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
+                <br/>
+              </h3>
+            </div>
+          </section>
+          
+        </h3>
+
+        CA Application Test, accelerates time-to market for mobile applications. It provides functionality for developing, staging, and monitoring tests cases to the testing of mobile applications.
+      </div>
+      <div class="col-md-4 docandvideo">
+        <br/>
+        <div class="row" ng-show="demomode" >
+          <div class="col-md-7">
+          <a href="https://docs.google.com/document/d/1zQ4iBuuAePBgnQKaOH8ZTVzWFZ9fcodgo95xK-GYs8Y/edit?usp=sharing" target="_blank">Live Doc</a>
+          <br/>
+          <a href="docs/SolutionPro_ITADO_Demo_CA_Application_Test_for_Mobile_1.0.pdf" target="_blank">PDF Docs</a>
+          <br/>
+          <a ng-show="demomode" href="https://docs.google.com/document/d/1MLZzSlTPLAQFcA1RybsboenmHhBnErJdA6v-EkaaRQ8/edit?usp=sharing" target="_blank">FAQ's</a>
+          </br>
+          <a type="button" id="lnkbtn" class="btn btn-link" data-toggle="collapse" data-target="#pagedemo">
+            Video Walkthroughs
+          </a>
+            <br/>
+          <a href="" target="_blank">Video On The Go</a>
+          </div>
+          <div class="col-md-5">
+            <a href="https://docs.google.com/document/d/1zQ4iBuuAePBgnQKaOH8ZTVzWFZ9fcodgo95xK-GYs8Y/edit?usp=sharing" target="_blank"><span class="label label-success p75">Available</span></a>
+            <br/>
+            <a href="docs/SolutionPro_ITADO_Demo_CA_Application_Test_for_Mobile_1.0.pdf" target="_blank"><span class="label label-success p75">Available</span></a>
+            <br/>
+            <a href="https://docs.google.com/document/d/1MLZzSlTPLAQFcA1RybsboenmHhBnErJdA6v-EkaaRQ8/edit?usp=sharing" target="_blank"><span class="label label-success p75">Available</span></a>
+            <br/>
+            <a href="" data-toggle="collapse" data-target="#pagedemo">
+              <span class="label label-success p75">
+                Available
+              </span>
+            </a>
+
+            <br/>
+            <a href="" target="_blank"><span class="label label-default p75">Not Available</span></a>
+            <br/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pagedemo" class="collapse row">
+
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="images/Slide1.JPG">
+            <div class="caption">
+                <button ng-show="demomode" id="uc1p1Modal" class="btn btn-primary" data-toggle="modal" data-target=".uc1p1Modal">
+                  Play
+                </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="images/Slide2.JPG">
+            <div class="caption">
+              <button ng-show="demomode" id="uc1p2Modal" class="btn btn-primary" data-toggle="modal" data-target=".uc1p2Modal">
+                Play
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="images/Slide3.JPG">
+            <div class="caption">
+              <button ng-show="demomode" id="uc2Modal" class="btn btn-primary" data-toggle="modal" data-target=".uc2Modal">
+                Play
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+
+<!-- how to use this page Modal -->
+<div id="howtouse" class="modal howtouse" tabindex="-1" role="dialog" aria-labelledby="howtouse" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <video id="howtouse" class="video-js vjs-default-skin"
+             controls preload="auto" width="960" height="540"
+             data-setup='{"example_option":true}'>
+        <source src="videos/Howtousethispage.mp4" type='video/mp4' />
+      </video>
+    </div>
+  </div>
+</div>
+
+<div id="uc1p1Modal" class="modal uc1p1Modal" tabindex="-1" role="dialog" aria-labelledby="uc1p1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <video id="uc1p1" class="video-js vjs-default-skin"
+             controls preload="auto" width="960" height="540"
+             data-setup='{"example_option":true}'>
+        <source src="videos/ITADO2-1-AppTest-UC1-p1.mp4" type='video/mp4' />
+      </video>
+    </div>
+  </div>
+</div>
+
+<div id="uc1p2Modal" class="modal uc1p2Modal" tabindex="-1" role="dialog" aria-labelledby="uc1p2" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <video id="uc1p2" class="video-js vjs-default-skin"
+             controls preload="auto" width="960" height="540"
+             data-setup='{"example_option":true}'>
+        <source src="videos/ITADO2-1-AppTest-UC1-p2.mp4" type='video/mp4' />
+      </video>
+    </div>
+  </div>
+</div>
+
+<div id="uc2Modal" class="modal uc2Modal" tabindex="-1" role="dialog" aria-labelledby="uc2" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <video id="uc2" class="video-js vjs-default-skin"
+             controls preload="auto" width="960" height="540"
+             data-setup='{"example_option":true}'>
+        <source src="videos/ITADO2-1-AppTest-UC2.mp4" type='video/mp4' />
+      </video>
+    </div>
+  </div>
+</div>
+
+
+<div id="accordion" class="panel-group">
+
+  <!-- UC1 part 1 -->
+<div class="panel panel-default">
+  <div class="row">
+    <div class="panel-heading col-sm-11">
+      <h4 class="panel-title">
+        <a href="#collapse1" data-parent="#accordion" data-toggle="collapse" class="collapsed">
+          <h2 class="featurette-heading">UC1-1: Record a test
+              <span class="text-muted">
+                using local Android AVD
+              </span>
+          </h2>
+        </a>
+      </h4>
+    </div>
+  </div>
+  <div class="panel-collapse collapse" id="collapse1" style="height: 0;">
+    <div class="panel-body">
+      <div class="row">
+        <div class="row">
+          <img
+            src="images/Slide1.JPG"
+            class="" id="img1">
+          <div class="col-md-6">
+            <h4>Description</h4>
+            <p class="text-muted">
+              This is an introductory demonstration which shows how
+              you can use CA Application Test to quickly and easily
+              create Mobile tests by automatically starting the required
+              resources deploying the App and creating a test
+              by simply interacting with the App.
+            </p>
+          </div>
+          <div class="col-md-3">
+            <h4>
+              <button ng-show="demomode"  type="button" class="btn btn-link badge" data-container="body" data-toggle="popover" data-placement="left" data-content="Documentation provides step by step demo instructions. It is available as Live Doc which gives you the ability to collaborate on the document or PDF">
+                ?
+              </button>
+              <strong>Documentation</strong>
+            </h4>
+            <a title="LiveDocUC1" href="https://docs.google.com/document/d/1zQ4iBuuAePBgnQKaOH8ZTVzWFZ9fcodgo95xK-GYs8Y/edit#bookmark=kix.fyz01tn377be" target="_blank">Live Doc</a>
+            or
+            <a title="PDF" href="" target="_blank">PDF<br></a>
+            <a ng-show="demomode" href="https://docs.google.com/document/d/1MLZzSlTPLAQFcA1RybsboenmHhBnErJdA6v-EkaaRQ8/edit?usp=sharing" target="_blank">FAQ's</a>
+
+            <h4><strong>Video Walkthrough</strong></h4>
+            <p>
+              <button id="uc1p1Modal" class="btn btn-primary" data-toggle="modal" data-target=".uc1p1Modal">
+                Play
+              </button>
+            </p>
+
+            <h4><strong>Accounts</strong></h4>
+            OS Administrator: <strong>Administrator</strong>
+            <br/>
+            Password: <strong>CAdemo123</strong>
+
+
+            </a>
+          </div>
+        </div>
+        <div class="col-md-8">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- UC1 pt2 -->
+  <div class="panel panel-default">
+    <div class="row">
+      <div class="panel-heading col-sm-11">
+        <h4 class="panel-title">
+          <a href="#collapse2" data-parent="#accordion" data-toggle="collapse" class="collapsed">
+            <h2 class="featurette-heading">UC1-2: Run a locally recorded test
+            <span class="text-muted">
+              on local Android AVD
+            </span>
+            </h2>
+          </a>
+        </h4>
+      </div>
+    </div>
+    <div class="panel-collapse collapse" id="collapse2" style="height: 0;">
+      <div class="panel-body">
+        <div class="row">
+          <div class="row">
+            <img
+              src="images/Slide1.JPG"
+              class="" id="img1">
+            <div class="col-md-6">
+              <h4>Description</h4>
+              <p class="text-muted">
+                The easier it is to test the more often tests will be run,
+                this allows for many test iterations which gives faster
+                visibility to any issues.<br/>
+                Part 1 of this Use Case showed how to record a test.
+                Here in part 2 we demonstrate how easy it is to run the recorded test.
+                Increased testing speed is a great driver for improved quality
+                code with less defects.
+              </p>
+            </div>
+
+            <div class="col-md-3">
+              <h4>
+                <button ng-show="demomode"  type="button" class="btn btn-link badge" data-container="body" data-toggle="popover" data-placement="left" data-content="Documentation provides step by step demo instructions. It is available as Live Doc which gives you the ability to collaborate on the document or PDF">
+                  ?
+                </button>
+                <strong>Documentation</strong>
+              </h4>
+              <a title="LiveDocUC1p2" href="https://docs.google.com/document/d/1zQ4iBuuAePBgnQKaOH8ZTVzWFZ9fcodgo95xK-GYs8Y/edit#bookmark=kix.pmgppxh4fn7n" target="_blank">Live Doc</a>
+              or
+              <a title="PDF" href="" target="_blank">PDF<br></a>
+              <a ng-show="demomode" href="https://docs.google.com/document/d/1MLZzSlTPLAQFcA1RybsboenmHhBnErJdA6v-EkaaRQ8/edit?usp=sharing" target="_blank">FAQ's</a>
+
+              <h4><strong>Video Walkthrough</strong></h4>
+              <p>
+                <button id="uc1p2Modal" class="btn btn-primary" data-toggle="modal" data-target=".uc1p2Modal">
+                  Play
+                </button>
+              </p>
+
+              <h4><strong>Accounts</strong></h4>
+              OS Administrator: <strong>Administrator</strong>
+              <br/>
+              Password: <strong>CAdemo123</strong>
+
+              </a>
+            </div>
+
+          </div>
+          <div class="col-md-8">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UC2 -->
+  <div class="panel panel-default">
+    <div class="row">
+      <div class="panel-heading col-sm-11">
+        <h4 class="panel-title">
+          <a href="#collapse3" data-parent="#accordion" data-toggle="collapse" class="collapsed">
+            <h2 class="featurette-heading">UC2: Playback a locally recorded test
+              <span class="text-muted">
+                in the cloud
+              </span>
+            </h2>
+          </a>
+        </h4>
+      </div>
+    </div>
+    <div class="panel-collapse collapse" id="collapse3" style="height: 0;">
+      <div class="panel-body">
+        <div class="row">
+          <div class="row">
+            <img
+              src="images/Slide3.JPG"
+              class="" id="img1">
+            <div class="col-md-6">
+              <h4>Description</h4>
+              <p class="text-muted">
+                Using CA Application Test can also give your testing access to Cloud based devices which gives you the
+                ability to expand your testing to cover scalability for load and parallelization.
+
+              </p>
+            </div>
+
+            <div class="col-md-3">
+              <h4>
+                <button ng-show="demomode"  type="button" class="btn btn-link badge" data-container="body" data-toggle="popover" data-placement="left" data-content="Documentation provides step by step demo instructions. It is available as Live Doc which gives you the ability to collaborate on the document or PDF">
+                  ?
+                </button>
+                <strong>Documentation</strong>
+              </h4>
+              <a title="LiveDocUC2" href="https://docs.google.com/document/d/1zQ4iBuuAePBgnQKaOH8ZTVzWFZ9fcodgo95xK-GYs8Y/edit#bookmark=kix.1bb5uxmx5thu" target="_blank">Live Doc</a>
+              or
+              <a title="PDF" href="" target="_blank">PDF<br></a>
+              <a ng-show="demomode" href="https://docs.google.com/document/d/1MLZzSlTPLAQFcA1RybsboenmHhBnErJdA6v-EkaaRQ8/edit?usp=sharing" target="_blank">FAQ's</a>
+
+              <h4><strong>Video Walkthrough</strong></h4>
+              <p>
+                <button id="uc2Modal" class="btn btn-primary" data-toggle="modal" data-target=".uc2Modal">
+                  Play
+                </button>
+              </p>
+
+              <h4><strong>Accounts</strong></h4>
+              OS Administrator: <strong>Administrator</strong>
+              <br/>
+              Password: <strong>CAdemo123</strong>
+              <br/>
+              <a title="SauceLabs" href="https://saucelabs.com/login" target="_blank">Sauce Labs</a>
+              <br/>
+              Account provided by DoD
+              <br/>
+              </a>
+            </div>
+
+          </div>
+          <div class="col-md-8">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div ng-show="demomode" class="container">
+  <section class="row">
+
+    <section id="todoapp">
+      <header id="header">
+        <h1>
+          <button ng-show="demomode"  type="button" class="btn btn-link badge" data-container="body" data-toggle="popover" data-placement="right" data-content="To provide feedback or request additional use cases which you feel will be valuable for you and others, just add content below.">
+            ?
+          </button>
+          Request additional Use Cases; Provide feedback; Up or Down vote content
+        </h1>
+        <input id="new-todo" placeholder="Click here to Add content, Press Enter to Save, Double-click to Edit." autofocus>
+      </header>
+
+      <table class="table table-striped">
+        <tbody>
+        <tr id="todo-list"></tr>
+        </tbody>
+      </table>
+      <footer id="footer">
+        <span id="todo-count"></span>
+        <div id="sync-wrapper">
+          <div id="sync-success">Currently syncing</div>
+          <div id="sync-error">There was a problem syncing - need CA network access</div>
+        </div>
+      </footer>
+    </section>
+
+  </section>
+</div>
+
+
+  </div>
+<!-- /.container -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <br/>
+        <p class="text-muted">&copy; 2014 CA Technologies</p>
+      </div>
+      <div class="col-md-3">
+        <br/>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="js/angular.min.js"></script>
+<script src="js/timer.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/pouchdb-2.2.3.min.js"></script>
+<script src="js/docs.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/usecase.js"></script>
+
+
+<script>
+  $('#myModal').on('hidden.bs.modal', function () {
+    $('#myModal iframe').removeAttr('src');
+  })
+</script>
+
+<!--
+<script src="js/status.js"></script>
+-->
+
+</body>
+</html>

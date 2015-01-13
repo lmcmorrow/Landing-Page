@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html ng-app="usecaseApp">
+<head lang="en">
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/docs.css">
+  <script src="scripts/controllers/main.js"></script>
+  <!-- endbuild -->
+</head>
+
+<body ng-controller="UsecaseCtrl">
+
+<!-- Fixed navbar -->
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://km.ca.com/sales/presales/solutions/default.aspx">Solutions Enablement</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul  ng-show="demomode" class="nav navbar-nav">
+        <li><a href="http://demosondemand.ca.com/" target="_blank">Schedule a Demo</a></li>
+        <li><a title="DoD" href="https://km.ca.com/sales/presales/solutions/Lists/Issues%20%20Requests/NewForm.aspx?RootFolder=/sales/presales/solutions/Lists/Issues  Requests&ContentTypeId=0x010300073C8CCEACA033498DFFD6BF964C11BC&Source=https://km.ca.com/sales/presales/solutions/Lists/Issues%2520%2520Requests/active.aspx" target="_blank">Support</a></li>
+      </ul>
+
+      <!-- Toggle start -->
+      <!--
+              <div class="switch">
+                <input  ng-init="demomode=false" ng-model="demomode" id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox">
+                <label for="cmn-toggle-1"></label>
+                <label ng-click="demomode" for="cmn-toggle-1" data-on="ON" data-off="OFF"></label>
+              </div>
+      -->
+      <div class="switch pull-right">
+        <input ng-init="demomode=false" ng-model="demomode" id="cmn-toggle-7" class="cmn-toggle cmn-toggle-round active" type="checkbox">
+        <label ng-click="demomode" for="cmn-toggle-7" data-on="Collaborate ON" data-off="Collaborate OFF"></label>
+      </div>
+      <!-- Toggle end -->
+
+
+<!--
+      <div class = "status pull-right">
+        <span  class="label" id="status">checking...</span>
+      </div>
+-->
+
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</div>
+
+<div id="content" class="bs-docs-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 bs-docs-">
+        <h1>CA Application Test demo</h1>
+        Mobile Testing extends basic LISA functionality for developing, staging, and monitoring tests cases to the testing of mobile applications.
+      </div>
+      <div class="col-md-4 docandvideo">
+        <br/>
+        <div class="row" ng-show="demomode" >
+          <div class="col-md-7">
+          <a href="https://docs.google.com/document/d/1zQ4iBuuAePBgnQKaOH8ZTVzWFZ9fcodgo95xK-GYs8Y/edit?usp=sharing" target="_blank">Live Docs</a>
+          <br/>
+          <a href="" target="_blank">PDF Docs</a>
+          <br/>
+          <a href="" target="_blank">Video Walkthrough</a>
+          <br/>
+          <a href="" target="_blank">Video On The Go</a>
+          </div>
+          <div class="col-md-5">
+            <a href="https://docs.google.com/document/d/1zQ4iBuuAePBgnQKaOH8ZTVzWFZ9fcodgo95xK-GYs8Y/edit?usp=sharing" target="_blank"><span class="label label-success">Available</span></a>
+            <br/>
+            <a href="" target="_blank"><span class="label label-info">Coming soon</span></a>
+            <br/>
+            <a href="" target="_blank"><span class="label label-info">Coming soon</span></a>
+            <br/>
+            <a href="" target="_blank"><span class="label label-default">Not Available</span></a>
+            <br/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<div id="accordion" class="panel-group">
+
+  <!-- UC1 -->
+<div class="panel panel-default">
+  <div class="row">
+    <div ng-show="demomode" class="col-sm-1 text-center vote">
+      <span title="Up Votes" ng-click="upVote()" class="glyphicon glyphicon glyphicon-arrow-up" style='cursor:pointer'></span>
+      <br/>{{vote}} votes <br/>
+      <i title="Down Votes" ng-click="downVote()" class="glyphicon glyphicon glyphicon-arrow-down" style='cursor:pointer'></i>
+    </div>
+    <div class="panel-heading col-sm-11">
+      <h4 class="panel-title">
+        <a href="#collapse1" data-parent="#accordion" data-toggle="collapse" class="collapsed">
+          <h2 class="featurette-heading">UC1 - Record a test
+              <span class="text-muted">
+                using local Android AVD
+              </span>
+          </h2>
+        </a>
+      </h4>
+    </div>
+  </div>
+  <div class="panel-collapse collapse" id="collapse1" style="height: 0;">
+    <div class="panel-body">
+      <div class="row">
+        <div class="row">
+          <img
+            src="images/Slide1.JPG"
+            class="" id="img1">
+          <div class="col-md-3">
+            <h4>Long Description</h4>
+            <p class="text-muted">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+              moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+              Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+              shoreditch et.
+            </p>
+          </div>
+          <div class="col-md-3">
+            <h4>Documentation</h4>
+            <a title="CloudTest" href="https://docs.google.com/document/d/1zQ4iBuuAePBgnQKaOH8ZTVzWFZ9fcodgo95xK-GYs8Y/edit?usp=sharing" target="_blank">Live Doc<br></a>
+            <a title="CloudTest" href="https://docs.google.com/a/elusivestars.com/document/d/10L4jiZ39tBoArZdtF40TMQXJUhLLRmYWSZu1sWUbQA4/" target="_blank">PDF<br></a>
+            <h4>Accounts</h4>
+            OS Administrator: <strong>Administrator</strong>
+            <br/>
+            Password: <strong>CAdemo123</strong>
+          </div>
+          <div class="col-md-3">
+            <h4>Videos</h4>
+            <a title="Datafinder" href="https://drive.google.com/file/d/0BxRy93HqWUwuUVJ4SlNtZy1XS3c/edit?usp=sharing" target="_blank">Video walkthrough<br></a>
+            <h4>Get Started</h4>
+            <a title="Workstation" href="file:///C:/Lisa75/bin/LISAWorkstation.exe" target="_blank">Launch Workstation<br></a>
+          </div>
+        </div>
+        <div class="col-md-8">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- UC2 -->
+  <div class="panel panel-default">
+    <div class="row">
+      <div ng-show="demomode" class="col-sm-1 text-center vote">
+        <span title="Up Votes" ng-click="upVote()" class="glyphicon glyphicon glyphicon-arrow-up" style='cursor:pointer'></span>
+        <br/>{{vote}} votes <br/>
+        <i title="Down Votes" ng-click="downVote()" class="glyphicon glyphicon glyphicon-arrow-down" style='cursor:pointer'></i>
+      </div>
+      <div class="panel-heading col-sm-11">
+        <h4 class="panel-title">
+          <a href="#collapse2" data-parent="#accordion" data-toggle="collapse" class="collapsed">
+            <h2 class="featurette-heading">UC2 - Playback a recorded test
+            <span class="text-muted">
+              using local Android AVD
+            </span>
+            </h2>
+          </a>
+        </h4>
+      </div>
+    </div>
+    <div class="panel-collapse collapse" id="collapse2" style="height: 0;">
+      <div class="panel-body">
+        <div class="row">
+          <div class="row">
+            <img
+              src="images/Slide1.JPG"
+              class="" id="img1">
+            <div class="col-md-3">
+              <h4>Long Description</h4>
+              <p class="text-muted">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                shoreditch et.
+              </p>
+            </div>
+            <div class="col-md-3">
+              <h4>Documentation</h4>
+              <a title="CloudTest" href="https://docs.google.com/document/d/1zQ4iBuuAePBgnQKaOH8ZTVzWFZ9fcodgo95xK-GYs8Y/edit#bookmark=id.yxuprq4dnlly" target="_blank">Live Doc<br></a>
+              <a title="CloudTest" href="https://docs.google.com/a/elusivestars.com/document/d/10L4jiZ39tBoArZdtF40TMQXJUhLLRmYWSZu1sWUbQA4/" target="_blank">PDF<br></a>
+              <h4>Accounts</h4>
+              OS Administrator: <strong>ca</strong>
+              <br/>
+              Password: <strong>CAdemo123</strong>
+              <br/>
+              Test Engineer: <strong>tevans</strong>
+              <br/>
+              Password: <strong>Provided by DoD</strong>
+            </div>
+            <div class="col-md-3">
+              <h4>Videos</h4>
+              <a title="Datafinder" href="https://drive.google.com/file/d/0BxRy93HqWUwuUVJ4SlNtZy1XS3c/edit?usp=sharing" target="_blank">Video walkthrough<br></a>
+              <h4>Get Started</h4>
+              <a title="CloudTest" href="http://172.17.38.65/concerto/" target="_blank">Launch CloudTest Lite<br></a>
+            </div>
+          </div>
+          <div class="col-md-8">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UC3 -->
+  <div class="panel panel-default">
+    <div class="row">
+      <div ng-show="demomode" class="col-sm-1 text-center vote">
+        <span title="Up Votes" ng-click="upVote()" class="glyphicon glyphicon glyphicon-arrow-up" style='cursor:pointer'></span>
+        <br/>{{vote}} votes <br/>
+        <i title="Down Votes" ng-click="downVote()" class="glyphicon glyphicon glyphicon-arrow-down" style='cursor:pointer'></i>
+      </div>
+      <div class="panel-heading col-sm-11">
+        <h4 class="panel-title">
+          <a href="#collapse3" data-parent="#accordion" data-toggle="collapse" class="collapsed">
+            <h2 class="featurette-heading">UC3 - Playback a locally recorded test
+              <span class="text-muted">
+                in the cloud
+              </span>
+            </h2>
+          </a>
+        </h4>
+      </div>
+    </div>
+    <div class="panel-collapse collapse" id="collapse3" style="height: 0;">
+      <div class="panel-body">
+        <div class="row">
+          <div class="row">
+            <img
+              src="images/Slide3.JPG"
+              class="" id="img1">
+            <div class="col-md-3">
+              <h4>Long Description</h4>
+              <p class="text-muted">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                shoreditch et.
+              </p>
+            </div>
+            <div class="col-md-3">
+              <h4>Documentation</h4>
+              <a title="CloudTest" href="https://docs.google.com/document/d/1zQ4iBuuAePBgnQKaOH8ZTVzWFZ9fcodgo95xK-GYs8Y/edit#bookmark=id.1jd9i3i3qwr7" target="_blank">Live Doc<br></a>
+              <a title="CloudTest" href="https://docs.google.com/a/elusivestars.com/document/d/10L4jiZ39tBoArZdtF40TMQXJUhLLRmYWSZu1sWUbQA4/" target="_blank">PDF<br></a>
+              <h4>Accounts</h4>
+              OS Administrator: <strong>ca</strong>
+              <br/>
+              Password: <strong>CAdemo123</strong>
+              <br/>
+              Test Engineer: <strong>tevans</strong>
+              <br/>
+              Password: <strong>Provided by DoD</strong>
+            </div>
+            <div class="col-md-3">
+              <h4>Videos</h4>
+              <a title="Datafinder" href="https://drive.google.com/file/d/0BxRy93HqWUwuUVJ4SlNtZy1XS3c/edit?usp=sharing" target="_blank">Video walkthrough<br></a>
+              <h4>Get Started</h4>
+              <a title="CloudTest" href="http://172.17.38.65/concerto/" target="_blank">Launch CloudTest Lite<br></a>
+            </div>
+          </div>
+          <div class="col-md-8">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div ng-show="demomode" class="container">
+  <section class="row">
+
+    <h2>Request additional Use Cases</h2>
+
+    <form name="useCaseRequestForm" ng-submit="submit()" class="row style-2">
+      <div class="col-md-2">
+        <input type="text" class="form-control" ng-model="usecase.creator"/>
+        <h3>email</h3>
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" ng-model="usecase.title"/>
+        <h3>Use Case title</h3>
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" ng-model="usecase.description"/>
+        <h3>Use case description</h3>
+      </div>
+      <div class="col-md-1">
+        <input type="submit" class="btn btn-primary" value="Save"/>
+      </div>
+    </form>
+
+    <br/>
+
+    <table class="table table-striped">
+      <tbody>
+      <tr class="row" ng-repeat="usecase in usecases">
+        <!--<td>{{ $index }}</td> -->
+        <td class="col-md-2">{{ usecase.creator }}</td>
+        <td class="col-md-3">{{ usecase.title }}</td>
+        <td class="col-md-7">{{ usecase.description }}</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </section>
+</div>
+
+
+  </div>
+<!-- /.container -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <br/>
+        <p class="text-muted">&copy; 2014 CA Technologies</p>
+      </div>
+      <div class="col-md-3">
+        <br/>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/angular.min.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/pouchdb-2.2.3.min.js"></script>
+<script src="js/docs.min.js"></script>
+<script src="js/app.js"></script>
+<!--
+<script src="js/status.js"></script>
+-->
+
+</body>
+</html>
